@@ -15,4 +15,9 @@ Vagrant::Config.run do |config|
     config.vm.network :hostonly, "192.168.33.101"
     config.vm.forward_port 8098, 8098
   end
+
+  config.vm.define :riak02 do |config|
+    config.vm.host_name = "riak02.git.io"
+    config.vm.network :hostonly, "192.168.33.102"
+  end
 end
