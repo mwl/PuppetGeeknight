@@ -10,12 +10,9 @@ Vagrant::Config.run do |config|
     puppet.manifest_file = "site.pp"
   end
 
-  config.vm.define :www do |config|
-    config.vm.forward_port 8080, 8080
-    config.vm.host_name = "www.git.io"
-  end
-
   config.vm.define :riak01 do |config|
     config.vm.host_name = "riak01.git.io"
+    config.vm.network :hostonly, "192.168.33.101"
+    config.vm.forward_port 8098, 8098
   end
 end

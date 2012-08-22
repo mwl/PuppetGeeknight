@@ -10,8 +10,8 @@ exec { "apt-get-update" :
 
 node /^riak[0-9]+$/ {
 	class {"riak":
-		riakhost => $ipaddress_eth0,
-		riak_ring => "riak@10.0.2.15"
+		riakhost => $ipaddress_eth1,
+		riak_ring => "riak@192.168.33.101"
 	}
 }
 
